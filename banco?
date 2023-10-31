@@ -8,8 +8,9 @@ l_email=[]
 
 #funções 
 def log_in (variavel,l_variavel):
-    for item in l_variavel
-    return
+    for item in l_variavel:
+     if item == variavel:
+            return True 
 
 
 
