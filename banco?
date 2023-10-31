@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+uma interface de banco (não pergunta, eu só quero brincar com lista )
+"""
+#variaveis 
+l_senha=[]
+l_email=[]
+
+#funções 
+def log_in (variavel,l_variavel):
+    for item in l_variavel
+    return
+
+
+
+
+#bloco principal 
+print ('crie uma conta em nosso banco (extremamente confiavel)')
+Ja_tem_conta=input("já tem uma conta? ")
+if Ja_tem_conta == Ja_tem_conta.lower("sim","Sim","ss"):
+  email=input("coloque seu email: ")
+  senha=input("coloque sua senha: ")
+  verificar_email= log_in(email,l_email)
