@@ -5,20 +5,52 @@ uma interface de banco (não pergunta, eu só quero brincar com lista )
 #variaveis 
 l_senha=[]
 l_email=[]
+l_conta = []
+l_total_contas = []
 
 #funções 
-def log_in (variavel,l_variavel):
+def criarconta(resposta):
+    s_email = input('Insira seu endereço de email: ')
+    s_senha = input('Crie uma senha: ')
+    l_email.append(s_email)
+    l_senha.append(s_senha)
+    l_conta.append(l_senha)
+    l_conta.append(l_email)
+    l_total_contas.append(l_conta)
+    return l_total_contas
+
+def log_in_true (variavel,l_variavel):
     for item in l_variavel:
-     if item == variavel:
-            return True 
+     return item == variavel
 
-
-
-
+def log_in_false(variavel,l_variavel,variavel2,l_variavel2):
+    verificar_email= log_in_true(variavel,l_variavel)
+    verificar_senha= log_in_true(variavel2, l_variavel2)
+    if verificar_email and verificar_senha: 
+     print('entrou parabens')
+    else: 
+        print('sua senha está incorreta')
+        mudar_senha= input('deseja mudar de senha(sim ou não)? ')
+        if mudar_senha=="sim":
+          email_mudar=input('coloque seu email: ')
+          mudar_senha(email_mudar,l_total_contas)
+    return 
+ 
+def mudar_senha(variavel,l_variavel):
+    for item in l_variavel:
+        if type(item)!=str:
+            mudar_senha(item, l_variavel)
+        else: 
+           if item == variavel: 
+               new_variavel=input('coloque sua nova senha: ')
+               l_variavel[1]= new_variavel
+               
+    return 
+ 
+    
 #bloco principal 
 print ('crie uma conta em nosso banco (extremamente confiavel)')
 Ja_tem_conta=input("já tem uma conta? ")
-if Ja_tem_conta == Ja_tem_conta.lower("sim","Sim","ss"):
+if Ja_tem_conta == Ja_tem_conta.lower("sim","s","ss"):
   email=input("coloque seu email: ")
   senha=input("coloque sua senha: ")
-  verificar_email= log_in(email,l_email)
