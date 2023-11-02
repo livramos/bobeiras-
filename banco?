@@ -10,6 +10,7 @@ l_total_contas = []
 
 #funções 
 def criarconta(resposta):
+    
     s_email = input('Insira seu endereço de email: ')
     s_senha = input('Crie uma senha: ')
     l_email.append(s_email)
@@ -18,6 +19,9 @@ def criarconta(resposta):
     l_conta.append(l_email)
     l_total_contas.append(l_conta)
     return l_total_contas
+
+def ja_tenho_conta ():
+    return 
 
 def log_in_true (variavel,l_variavel):
     for item in l_variavel:
@@ -34,7 +38,16 @@ def log_in_false(variavel,l_variavel,variavel2,l_variavel2):
         if mudar_senha=="sim":
           email_mudar=input('coloque seu email: ')
           mudar_senha(email_mudar,l_total_contas)
-    return 
+          ja_tenho_conta()
+          return 
+        elif mudar_senha=="não":
+            print('ta bom então')
+            exit(1)
+            return
+        else: 
+            print('resposta invalida')
+            log_in_false(variavel, l_variavel, variavel2, l_variavel2)
+            return
  
 def mudar_senha(variavel,l_variavel):
     for item in l_variavel:
@@ -44,13 +57,21 @@ def mudar_senha(variavel,l_variavel):
            if item == variavel: 
                new_variavel=input('coloque sua nova senha: ')
                l_variavel[1]= new_variavel
+               return l_variavel
+           else:
+               print ('email invalido') 
+               denovo=input ('Insira novamente o email cadastro: ')
+               mudar_senha(denovo, l_variavel)
+               return 
                
-    return 
  
     
 #bloco principal 
-print ('crie uma conta em nosso banco (extremamente confiavel)')
-Ja_tem_conta=input("já tem uma conta? ")
-if Ja_tem_conta == Ja_tem_conta.lower("sim","s","ss"):
+print('Banco de Verdade (definitivamente não é scam)')
+print('1. Já tenho uma conta\n2. desejo criar uma conta')
+resp = int(input(''))
+if resp=='1':
   email=input("coloque seu email: ")
   senha=input("coloque sua senha: ")
+elif resp=='2':
+    print('oe')
