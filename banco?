@@ -3,14 +3,13 @@
 uma interface de banco (não pergunta, eu só quero brincar com lista )
 """
 #variaveis 
-l_senha=[]
-l_email=[]
+l_senha = []
+l_email = []
 l_conta = []
 l_total_contas = []
 
 #funções 
-def criarconta(resposta):
-    
+def criarconta():
     s_email = input('Insira seu endereço de email: ')
     s_senha = input('Crie uma senha: ')
     l_email.append(s_email)
@@ -21,6 +20,17 @@ def criarconta(resposta):
     return l_total_contas
 
 def ja_tenho_conta ():
+    print('Banco de Verdade (definitivamente não é scam)')
+    print('1. Já tenho uma conta\n2. desejo criar uma conta')
+    resp = int(input(''))
+    if resp==1:
+      email=input("coloque seu email: ")
+      senha=input("coloque sua senha: ")
+      log_in_false(email, l_email, senha, l_senha)
+    elif resp==2:
+        criarconta()
+    else:
+        print('tá errado isso aí')
     return 
 
 def log_in_true (variavel,l_variavel):
@@ -51,7 +61,7 @@ def log_in_false(variavel,l_variavel,variavel2,l_variavel2):
  
 def mudar_senha(variavel,l_variavel):
     for item in l_variavel:
-        if type(item)!=str:
+        if type(item) is not str:
             mudar_senha(item, l_variavel)
         else: 
            if item == variavel: 
@@ -63,15 +73,17 @@ def mudar_senha(variavel,l_variavel):
                denovo=input ('Insira novamente o email cadastro: ')
                mudar_senha(denovo, l_variavel)
                return 
-               
- 
     
 #bloco principal 
 print('Banco de Verdade (definitivamente não é scam)')
 print('1. Já tenho uma conta\n2. desejo criar uma conta')
 resp = int(input(''))
-if resp=='1':
+if resp==1:
   email=input("coloque seu email: ")
   senha=input("coloque sua senha: ")
-elif resp=='2':
-    print('oe')
+  log_in_false(email, l_email, senha, l_senha)
+elif resp==2:
+    criarconta()
+    ja_tenho_conta()
+else:
+    print('tá errado isso aí')
