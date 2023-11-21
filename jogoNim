@@ -1,0 +1,27 @@
+#metodos 
+import random 
+#funções
+def exibe_apresentação_jogo(): 
+ bem_vindo ="\n Bem Vindo ao jogo Nim"
+ bem_vindo.center(20)
+ input(bem_vindo)
+ print('\n Okay, o jogo funciona da seguinte forma:')
+ print('\int(n ganha quem retirar o último bastão')
+ print('\n boa sorte!!')
+ return 
+
+def gera_batao():
+    l=[]
+    qtdGrupos= random.randint(3,7)
+    for item in range(qtdGrupos): 
+        bastao=random.randint(1,7)
+        l.append(bastao) 
+    return l
+        
+        
+
+def exibeBastoes():
+ lista=gera_batao()
+ for item in lista:
+    return 
+#BlocoPrincipal
