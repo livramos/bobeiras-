@@ -1,5 +1,5 @@
 #Metodos
-
+import os 
 #Variaveis
 arq_senhas = open('senhas.txt', 'a+')
 arq_emails = open('emails.txt', 'a+')
@@ -16,7 +16,12 @@ def criaConta():
   print('Conta Criada com sucesso!')
   return
 
-
+def aceita_email(variavel): 
+    
+    return 
+    
+    
+    
 def Verifica_log(arq,variavel):
   arquivo = open(arq,'r')
   for linha in arquivo:
@@ -30,15 +35,12 @@ def Verifica_log(arq,variavel):
 
 #blocoPrincipal 
 
-
-
-
 tem_Conta=input('Já tem conta? ')
 if tem_Conta == 'sim':
   email= input('Coloque seu email: ')
   senha= input('Coloque sua senha: ')
   if Verifica_log('emails.txt', email) and Verifica_log('senhas.txt', senha):
-    print('Logado com sucesso!')
+    input('Logado com sucesso!')
   else:
     print('Senha ou email incorretos. Tente novamente.')
 
@@ -48,3 +50,9 @@ else:
 
 arq_senhas.close()
 arq_emails.close()
+
+os.system('cls')  
+# interface do banco 
+
+print(' Bem vindo ao banco 100% veridico')
+
